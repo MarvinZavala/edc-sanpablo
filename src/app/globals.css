@@ -1,26 +1,145 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    /* San Pablo EDC Colors */
+    --terracota: 14 61% 41%;     /* #B04720 - Color principal */
+    --terracota-light: 14 61% 49%; /* #C65A34 - Variante clara */
+    --navy: 215 49% 22%;         /* #1D3553 - Color secundario */
+    --beige: 39 44% 93%;         /* #F5F0E6 - Fondo claro */
+    --beige-dark: 39 44% 89%;    /* #F0E6D8 - Fondo más oscuro */
+    
+    /* Mapped to system variables */
+    --background: var(--beige);
+    --foreground: 215 49% 22%;   /* Navy */
+    --card: 0 0% 100%;
+    --card-foreground: 215 49% 22%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 215 49% 22%;
+    --primary: 14 61% 41%;       /* Terracota */
+    --primary-foreground: 0 0% 98%;
+    --secondary: 215 49% 22%;    /* Navy */
+    --secondary-foreground: 0 0% 98%;
+    --muted: 39 20% 85%;         /* Beige muted */
+    --muted-foreground: 215 30% 40%;
+    --accent: 14 40% 90%;        /* Light terracota accent */
+    --accent-foreground: 14 61% 41%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 14 20% 80%;
+    --input: 14 20% 80%;
+    --ring: 14 61% 41%;          /* Terracota */
+    
+    /* Chart colors */
+    --chart-1: 14 61% 41%;       /* Terracota */
+    --chart-2: 215 49% 22%;      /* Navy */
+    --chart-3: 24 70% 50%;       /* Orange */
+    --chart-4: 43 74% 66%;       /* Gold */
+    --chart-5: 27 87% 67%;       /* Amber */
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    /* Dark mode variants */
+    --background: 215 30% 15%;   /* Dark navy background */
+    --foreground: 39 44% 93%;    /* Beige text */
+    --card: 215 35% 18%;
+    --card-foreground: 39 44% 93%;
+    --popover: 215 35% 18%;
+    --popover-foreground: 39 44% 93%;
+    --primary: 14 61% 41%;       /* Terracota stays the same */
+    --primary-foreground: 0 0% 98%;
+    --secondary: 215 40% 30%;    /* Lighter navy */
+    --secondary-foreground: 0 0% 98%;
+    --muted: 215 25% 25%;
+    --muted-foreground: 39 30% 80%;
+    --accent: 14 30% 25%;
+    --accent-foreground: 14 61% 49%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 215 25% 25%;
+    --input: 215 25% 25%;
+    --ring: 14 61% 41%;
+    
+    /* Chart colors dark mode */
+    --chart-1: 14 70% 50%;
+    --chart-2: 215 60% 45%;
+    --chart-3: 24 80% 55%;
+    --chart-4: 43 65% 60%;
+    --chart-5: 27 75% 55%;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    overflow-x: hidden;
+  }
+  
+  #__next, main {
+    width: 100%;
+  }
+}
+
+/* Performance Optimized Animations */
+@layer utilities {
+  @keyframes fade-in-up {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes scale-in {
+    from {
+      opacity: 0;
+      transform: scale(0.9);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  @keyframes slide-in-bottom {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-fade-in-up {
+    animation: fade-in-up 0.8s ease-out forwards;
+    opacity: 0;
+  }
+
+  .animate-scale-in {
+    animation: scale-in 0.6s ease-out forwards;
+    opacity: 0;
+  }
+
+  .animate-slide-in-bottom {
+    animation: slide-in-bottom 0.6s ease-out forwards;
+    opacity: 0;
+  }
+
+  .hover\:scale-102:hover {
+    transform: scale(1.02);
+  }
 }
