@@ -173,7 +173,7 @@ export default function Footer() {
         <div className="border-t border-secondary/30 py-6">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="text-white/80 text-sm mb-4 md:mb-0">
-              © 2024 San Pablo Economic Development Corporation. All rights reserved.
+              © 2025 San Pablo Economic Development Corporation. All rights reserved.
             </div>
             
             <div className="flex items-center space-x-6">

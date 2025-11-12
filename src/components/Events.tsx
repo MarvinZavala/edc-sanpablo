@@ -5,7 +5,7 @@ export default function Events() {
     {
       id: 1,
       title: "WIOA Orientation - Job Training Program",
-      date: "2024-01-25",
+      date: "2025-10-15",
       time: "10:00 AM - 12:00 PM",
       location: "San Pablo Community Center",
       address: "1970 Rumrill Blvd, San Pablo, CA",
@@ -18,7 +18,7 @@ export default function Events() {
     {
       id: 2,
       title: "Connect to Opportunity - Job Fair",
-      date: "2024-02-05",
+      date: "2025-12-05",
       time: "9:00 AM - 3:00 PM",
       location: "San Pablo Community Center",
       address: "13831 San Pablo Ave, San Pablo, CA",
@@ -31,7 +31,7 @@ export default function Events() {
     {
       id: 3,
       title: "Small Business Entrepreneurship Workshop",
-      date: "2024-02-15",
+      date: "2025-09-25",
       time: "6:00 PM - 8:00 PM",
       location: "EDC San Pablo Office",
       address: "1970 Rumrill Blvd, Suite 200, San Pablo, CA",
